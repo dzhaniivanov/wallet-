@@ -34,6 +34,7 @@ const BottomSection = styled.View`
   width: 100%;
   padding: 25px;
   flex: 1;
+  justify-content: flex-end;
 `;
 
 const Welcome: FunctionComponent = () => {
@@ -51,7 +52,7 @@ const Welcome: FunctionComponent = () => {
           <SmallText textStyles={{ width: "70%", marginBottom: 25 }}>
             Best payment method,connects your money to friends,family.
           </SmallText>
-          <RegularButton onPress={()=>{}}>Get Started</RegularButton>
+          <RegularButton onPress={() => {}}>Get Started</RegularButton>
         </BottomSection>
       </WelcomeContainer>
     </>
