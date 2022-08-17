@@ -1,6 +1,5 @@
-import React from "react";
+import React,{ FunctionComponent } from "react";
 import { View, Text } from "react-native";
-import { FunctionComponent } from "react";
 import styled from "styled-components/native";
 import { StatusBar } from "expo-status-bar";
 import Container from "../components/shared";
@@ -13,6 +12,10 @@ import SendMoneySection from "../components/SendMoney/SendMoneySection";
 import portrait1 from "./../assets/portraits/1.jpg";
 import portrait2 from "./../assets/portraits/2.jpg";
 import portrait3 from "./../assets/portraits/3.jpg";
+import { RootStackParamList } from "../navigators/RootStack";
+import { StackScreenProps } from "@react-navigation/stack";
+
+export type Props = StackScreenProps<RootStackParamList, "Home">;
 
 const HomeContainer = styled(Container)`
   background-color: ${colors.graylight};
@@ -20,7 +23,7 @@ const HomeContainer = styled(Container)`
   flex: 1;
 `;
 
-const Home: FunctionComponent = () => {
+const Home: FunctionComponent<Props> = ({navigation}) => {
   const cardsData = [
     {
       id: 1,

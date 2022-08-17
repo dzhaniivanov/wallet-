@@ -7,6 +7,8 @@ import card_bg from "./../../assets/bgs/background_transparent.png";
 import RegularText from "../Texts/RegularText";
 import { View } from "react-native";
 import SmallText from "../Texts/SmallText";
+import { useNavigation } from "@react-navigation/native";
+import { Props as HomeProps } from "./../../screens/Home";
 
 const CardBackground = styled.ImageBackground`
   height: 75%;
@@ -45,7 +47,11 @@ const Logo = styled.Image`
 `;
 
 const CardItem: FunctionComponent<CardProps> = (props) => {
-  const handlePress = () => {};
+  const navigation = useNavigation<HomeProps["navigation"]>();
+
+  const handlePress = () => {
+    navigation.navigate("Balance", { ...props });
+  };
 
   return (
     <CardBackground source={card_bg}>
@@ -63,7 +69,7 @@ const CardItem: FunctionComponent<CardProps> = (props) => {
               >
                 Total Balance
               </SmallText>
-              <RegularText textStyles={{fontSize:19}}>
+              <RegularText textStyles={{ fontSize: 19 }}>
                 ${props.balance}
               </RegularText>
             </View>
