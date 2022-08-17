@@ -10,5 +10,5 @@ const Container = styled.View`
 
 export default Container;
 
-const ScreenWidth = Dimensions.get("screen").width;
-const ScreenHeight = Dimensions.get("screen").height;
+export const ScreenWidth = Dimensions.get("screen").width;
+ export const ScreenHeight = Dimensions.get("screen").height;
